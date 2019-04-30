@@ -1,6 +1,23 @@
 body {
-	background:linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url(data/images/mountain_view_photo.jpg) no-repeat center fixed;
+	background: url(data/images/mountain_view_photo.jpg) no-repeat center fixed;
+	-webkit-background-size: cover;
 	background-size: cover;
+	-webkit-animation-name: backgroundslideshow;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 60s;
+	-webkit-animation-timing-function: linear;
+	animation-name: backgroundslideshow;
+    animation-iteration-count: infinite;
+    animation-duration: 60s;
+	animation-timing-function: linear;
+}
+
+/*The trick for preventing white blinks during background images switching trough animation*/
+div.preload-images {
+  background-image: url(data/images/lake_trees.jpg),
+  url(data/images/tralee_bay.jpg),
+  url(data/images/killarney_lake.jpg),
+  url(data/images/lake_mountains.jpg);
 }
 
 #header {
@@ -85,7 +102,7 @@ body {
 	text-align: center;
 }
 
-#photo {
+.photo {
 	width: 100%;
 	max-width: 346px;
 	height: auto;
@@ -95,13 +112,74 @@ body {
 }
 
 @keyframes rotate {
-  0% {-webkit-transform: rotateZ(0deg);
+	0% {-webkit-transform: rotateZ(0deg);
 		transform: rotateZ(0deg);
 		}
-  25% {-webkit-transform: rotateZ(360deg);
+	25% {-webkit-transform: rotateZ(360deg);
 		transform: rotateZ(360deg);
 		}
-  100% {-webkit-transform: rotateZ(360deg);
+	100% {-webkit-transform: rotateZ(360deg);
 		transform: rotateZ(360deg);
 		}
+}
+
+@keyframes backgroundslideshow {
+	0% {background-image: url(data/images/mountain_view_photo.jpg);
+		}
+	10% {background-image: url(data/images/mountain_view_photo.jpg);
+		}
+	20% {background-image: url(data/images/lake_trees.jpg);
+		}
+	30% {background-image: url(data/images/lake_trees.jpg);
+		}
+	40% {background-image: url(data/images/tralee_bay.jpg);
+		}
+	50% {background-image: url(data/images/tralee_bay.jpg);
+		}
+	60% {background-image: url(data/images/killarney_lake.jpg);
+		}
+	70% {background-image: url(data/images/killarney_lake.jpg);
+		}
+	80% {background-image: url(data/images/lake_mountains.jpg);
+		}
+	90% {background-image: url(data/images/lake_mountains.jpg);
+		}
+	100% {background-image: url(data/images/mountain_view_photo.jpg);
+		}
+}
+
+input[type=text], select, textarea {
+	width: 100%; 
+	padding: 10px; 
+	margin: 10px 0;
+	border: 1px gray solid;
+	border-radius: 5px;
+	resize: vertical;
+	box-sizing: border-box;
+}
+
+#submitwrapper {
+	text-align: center;
+}
+
+input[type=submit] {
+	background-color: rgba(255,255,255);
+	font-size: 20px;
+	color: black;
+	padding: 20px;
+	border: 1px black solid;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+input[type=submit]:hover {
+	background-color: gray;
+	-webkit-animation-name: rotate;
+    -webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+    -webkit-animation-duration: 12s;
+	animation-name: rotate;
+    animation-iteration-count: infinite;
+	animation-timing-function: linear;
+    animation-duration: 12s;
 }
