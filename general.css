@@ -12,7 +12,7 @@ body {
 	animation-timing-function: linear;
 }
 
-/*The trick for preventing white blinks during background images switching trough animation*/
+/*The trick for preventing white blinks during switching of background images trough animation*/
 div.preload-images {
   background-image: url(data/images/lake_trees.jpg),
   url(data/images/tralee_bay.jpg),
@@ -28,7 +28,6 @@ div.preload-images {
 }
 
 #content {
-	overflow: hidden;
 	background-color: rgba(0,0,0,.7);
 	font-size: 16px;
 	color: white;
@@ -38,7 +37,7 @@ div.preload-images {
 	border-radius: 8px;
 }
 
-#side_section {
+#nav {
 	width: 350px;
 	padding: 0;
 	float: right;
@@ -46,14 +45,14 @@ div.preload-images {
 
 #navigation {
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
 }
 
 #navigation a {
 	background-color: rgba(255,255,255);
 	font-size: 20px;
 	color: black;
-	padding: 20px;
+	padding: 1em;
 	border: 1px black solid;
 	border-radius: 5px;
 	text-decoration: none;
@@ -104,7 +103,7 @@ div.preload-images {
 
 .photo {
 	width: 100%;
-	max-width: 346px;
+	max-width: 348px;
 	height: auto;
 	margin-top: 20px;
 	border: 1px black solid;
@@ -126,23 +125,23 @@ div.preload-images {
 @keyframes backgroundslideshow {
 	0% {background-image: url(data/images/mountain_view_photo.jpg);
 		}
-	10% {background-image: url(data/images/mountain_view_photo.jpg);
+	17% {background-image: url(data/images/mountain_view_photo.jpg);
 		}
 	20% {background-image: url(data/images/lake_trees.jpg);
 		}
-	30% {background-image: url(data/images/lake_trees.jpg);
+	37% {background-image: url(data/images/lake_trees.jpg);
 		}
 	40% {background-image: url(data/images/tralee_bay.jpg);
 		}
-	50% {background-image: url(data/images/tralee_bay.jpg);
+	57% {background-image: url(data/images/tralee_bay.jpg);
 		}
 	60% {background-image: url(data/images/killarney_lake.jpg);
 		}
-	70% {background-image: url(data/images/killarney_lake.jpg);
+	77% {background-image: url(data/images/killarney_lake.jpg);
 		}
 	80% {background-image: url(data/images/lake_mountains.jpg);
 		}
-	90% {background-image: url(data/images/lake_mountains.jpg);
+	97% {background-image: url(data/images/lake_mountains.jpg);
 		}
 	100% {background-image: url(data/images/mountain_view_photo.jpg);
 		}
@@ -166,7 +165,7 @@ input[type=submit] {
 	background-color: rgba(255,255,255);
 	font-size: 20px;
 	color: black;
-	padding: 20px;
+	padding: 1em;
 	border: 1px black solid;
 	border-radius: 5px;
 	cursor: pointer;
@@ -182,4 +181,25 @@ input[type=submit]:hover {
     animation-iteration-count: infinite;
 	animation-timing-function: linear;
     animation-duration: 12s;
+}
+
+@media only screen and (max-width : 1200px) {
+	#nav {
+		float: none;
+		text-align: center;
+		width: 90%;
+		margin: auto;
+	}
+}
+
+@media only screen and (max-width : 660px) {
+	#navigation a, input[type=submit] {
+		font-size: 16px;
+	}
+}
+
+@media only screen and (max-width : 540px) {
+	#navigation a, p, input[type=submit] {
+		font-size: 12px;
+	}
 }
